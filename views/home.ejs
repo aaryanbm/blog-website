@@ -1,0 +1,22 @@
+<%- include("partials/header") -%>
+
+<h1>Hello</h1>
+<p><%= home %></p>
+<% console.log(posts) %>
+
+
+<%posts.forEach(function(post){%>
+    <% if (typeof post.content == 'undefined' ) { %> 
+        <p> no content</p> 
+        <% } else { %> 
+        <p> <%= post.content.substring(0, 100) %>...</p> 
+        <h1><%=post.title%></h1>
+    <p><%=post.content + "..."%>
+        <a href="/posts/<%=post._id%>" + post>Read More</a>
+    </p>    
+        <% } %> 
+    
+    
+<%})%>
+
+<%- include("partials/footer") -%>
